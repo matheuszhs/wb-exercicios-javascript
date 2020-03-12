@@ -9,12 +9,20 @@ const delta = (ax2, bx, c) => {
 	return Math.pow(bx, 2) - 4 * ax2 * c
 }
 
-const formular = (ax2, bx, c) => {
-	let delta = delta(ax2, bx, c)
+const formula = (ax2, bx, c) => {
+	let d = delta(ax2, bx, c)
+	let result = []
 
-	if(delta < 0) {
+	if(d < 0) {
 		console.log("Delta é negativo")
 	} else {
-		let positivo = 
+		result.push((- bx + Math.sqrt(d)) / 2 * ax2)
+		result.push((- bx - Math.sqrt(d)) / 2 * ax2)
+
+		console.log(result)
 	}
 }
+
+formula(1, -3, -10)
+formula(3, -5, 12)
+formula(3, -5, 0)
