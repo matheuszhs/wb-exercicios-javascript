@@ -6,3 +6,20 @@
 // 85, mas a nota 29 não será arredondada por ser abaixo de 40 e não ser possível arredondamento eficiente, ou
 // seja, que evite a reprovação do aluno. No caso de a nota ser 38, o arredondamento é possível pois atingirá 40
 // e o aluno será aprovado.
+
+const classificacao = nota => {
+	if (nota >= 38 ) {
+		nota = nota % 5 > 2 ? nota + (5 - (nota % 5)) : nota
+	}
+
+	let aprovado = nota < 40 ? 'reprovado' : 'aprovado'
+
+	console.log(`Aluno foi ${aprovado} com a nota de ${nota} pontos`)
+}
+
+classificacao(21)
+classificacao(38)
+classificacao(39)
+classificacao(51)
+classificacao(65)
+classificacao(68)
